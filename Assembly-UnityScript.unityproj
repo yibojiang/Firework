@@ -49,6 +49,8 @@
      <Compile Include="Assets\Game\Script\Controller\FireworkGenerator.js" />
      <Compile Include="Assets\Game\Script\Controller\FireworkLevelManager.js" />
      <Compile Include="Assets\Game\Script\Object\AlphaChange.js" />
+     <Compile Include="Assets\Game\Script\Object\BeepFirework.js" />
+     <Compile Include="Assets\Game\Script\Object\FastFirework.js" />
      <Compile Include="Assets\Game\Script\Object\Firework.js" />
      <Compile Include="Assets\Game\Script\Object\GlitterRain.js" />
      <Compile Include="Assets\Game\Script\Object\SnakePath.js" />

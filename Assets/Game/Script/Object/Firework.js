@@ -28,9 +28,13 @@ function Awake()
 
 function Start () {
 	//Debug.Log(transform.rotation);
+	
+
 	if (randomColor)
 	{
-		color=Color(Random.Range(0,1.0),Random.Range(0,1.0),Random.Range(0,1.0));
+		var hsbColor:HSBColor=new HSBColor(Random.value,0.8,1);
+		color=hsbColor.ToColor();
+		//color=Color(Random.Range(0,1.0),Random.Range(0,1.0),Random.Range(0,1.0));
 	}
 	else
 	{
@@ -47,8 +51,15 @@ function Shoot(_vel:Vector3)
 {
 	body.AddForce(_vel);
 	stage=1;
+
+	//this.audio.PlayOneShot(whistleClips[Random.Range(0,whistleClips.Length)]);
 	this.audio.clip=whistleClips[Random.Range(0,whistleClips.Length)];
 	this.audio.Play();
+
+	var snake:SnakePath=this.GetComponent(SnakePath) as SnakePath;
+	if (snake!=null){
+		snake.SetInitForce(_vel);
+	}
 }
 
 function ShootGlitter(_vel:Vector3,_lifeTime:float)
@@ -80,7 +91,7 @@ function Update () {
 			Explosion();
 		}
 	}
-	else if (stage==2)
+	else if (stage==2)//fw dying
 	{
 		
 		head.intensity-=Time.deltaTime;
@@ -118,7 +129,7 @@ function Explosion()
 	
 	body.Sleep();
 	
-	head.intensity=2;
+	head.intensity=1;
 	head.range=1000;
 	smoke.emit=false;
 }

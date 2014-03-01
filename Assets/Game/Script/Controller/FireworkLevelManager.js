@@ -86,14 +86,14 @@ function Update () {
 	{
 		if (index<levels.Length)
 		{
+			toggle+=Time.deltaTime;
 			if (toggle<interval)
 			{
-				toggle+=Time.deltaTime;
+				
 			}
 			else
 			{
-				
-				toggle=0;
+				toggle-=interval;
 				FireFirework(levels[index]);
 				index++;
 				if (index<levels.Length)

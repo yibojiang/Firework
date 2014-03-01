@@ -6,6 +6,9 @@ var dragonFW:GameObject;
 var starFW:GameObject;
 
 var heartFW:GameObject;
+var beepFW:GameObject;
+
+var glitterRainBeep:GameObject;
 function Start () {
 
 }
@@ -25,6 +28,11 @@ function Update () {
 	{
 		FireGlitterRain(transform.position,Vector3(0,5000,0),true);
 	}
+
+	if (Input.GetKeyDown(KeyCode.T))
+	{
+		FireGlitterRainBeep(transform.position,Vector3(0,5000,0),true);
+	}
 	
 	if (Input.GetKeyDown(KeyCode.H))
 	{
@@ -40,17 +48,27 @@ function Update () {
 	{
 		FireHeartFirework(transform.position,Vector3(Random.Range(-500,500),2000,Random.Range(-500,500)),true);
 	}
+
+	if (Input.GetKeyDown(KeyCode.L))
+	{
+		//FireBeepFirework(transform.position,Vector3(Random.Range(-500,500),3000,Random.Range(-500,500)),true);
+		FireBeepFirework(transform.position,Vector3(0,3000,Random.Range(-500,500)),true);
+	}
+
+	
+}
+
+function FireBeepFirework(_pos:Vector3,_vel:Vector3,_rndColor:boolean){
+	var f:Firework= Instantiate(beepFW,_pos,Quaternion.identity).GetComponent(Firework) as Firework;
+	f.randomColor=_rndColor;
+	f.Shoot(_vel);
 }
 
 function FireHeartFirework(_pos:Vector3,_vel:Vector3,_rndColor:boolean)
 {
 	var f:Firework= Instantiate(heartFW,_pos,Quaternion.identity).GetComponent(Firework) as Firework;
-	
-	
 	f.randomColor=_rndColor;
-	f.Shoot(_vel);
-	
-	
+	f.Shoot(_vel);	
 }
 
 function FireStarFirework(_pos:Vector3,_vel:Vector3,_rndColor:boolean)
@@ -74,10 +92,16 @@ function FireDragonFirework(_pos:Vector3,_vel:Vector3,_rndColor:boolean)
 	f.Shoot(_vel);
 }
 
+function FireGlitterRainBeep(_pos:Vector3,_vel:Vector3,_rndColor:boolean)
+{
+	var g:GlitterRain =Instantiate(glitterRainBeep,_pos,Quaternion.identity).GetComponent(GlitterRain) as GlitterRain;
+	g.randomColor=_rndColor;
+	g.Shoot(_vel);
+}
+
 function FireGlitterRain(_pos:Vector3,_vel:Vector3,_rndColor:boolean)
 {
 	var g:GlitterRain =Instantiate(glitterRain,_pos,Quaternion.identity).GetComponent(GlitterRain) as GlitterRain;
 	g.randomColor=_rndColor;
 	g.Shoot(_vel);
-	
 }
