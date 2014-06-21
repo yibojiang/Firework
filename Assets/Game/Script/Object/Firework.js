@@ -47,9 +47,9 @@ function Start () {
 	smokeA.colorAnimation=colors;
 }
 
-function Shoot(_vel:Vector3)
+function Shoot(_force:Vector3)
 {
-	body.AddForce(_vel);
+	body.AddForce(_force);
 	stage=1;
 
 	//this.audio.PlayOneShot(whistleClips[Random.Range(0,whistleClips.Length)]);
@@ -58,7 +58,7 @@ function Shoot(_vel:Vector3)
 
 	var snake:SnakePath=this.GetComponent(SnakePath) as SnakePath;
 	if (snake!=null){
-		snake.SetInitForce(_vel);
+		snake.SetInitForce(_force);
 	}
 }
 

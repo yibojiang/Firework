@@ -9,6 +9,26 @@ var heartFW:GameObject;
 var beepFW:GameObject;
 
 var glitterRainBeep:GameObject;
+
+
+var fireworkPrefabs:GameObject[];
+
+enum ExplosionType{
+	Normal=0,
+	GlitterRain=1,
+	Dragon=2,
+	Star=3,
+	Heart=4,
+	Beep=5,
+	GlitterRainBeep=6
+}
+
+enum PathType{
+	Straight=0,
+	Throw=1,
+	Screw=2
+}
+
 function Start () {
 
 }
@@ -55,8 +75,27 @@ function Update () {
 		FireBeepFirework(transform.position,Vector3(0,3000,Random.Range(-500,500)),true);
 	}
 
+
+
 	
 }
+
+
+function FireFirework(_startPos:Vector3,_endPos:Vector3,_speed:float,_eType:ExplosionType,_pType:PathType){
+	var f:Firework= Instantiate(fireworkPrefabs[_eType],_startPos,Quaternion.identity).GetComponent(Firework) as Firework;
+	var p:CustomPath;
+	if (_pType==PathType.Screw){
+		p=f.gameObject.AddComponent(ScrewPath);
+	}
+	else if (_pType==PathType.Straight){
+		p=f.gameObject.AddComponent(StraightPath);
+	}
+	else if (_pType==PathType.Throw){
+		p=f.gameObject.AddComponent(ThrowPath);	
+	}
+	p.InitPath(_startPos,_endPos,_speed);
+}
+
 
 function FireBeepFirework(_pos:Vector3,_vel:Vector3,_rndColor:boolean){
 	var f:Firework= Instantiate(beepFW,_pos,Quaternion.identity).GetComponent(Firework) as Firework;
