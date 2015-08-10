@@ -39,8 +39,8 @@ class BeepFirework extends Firework{
 		body.AddForce(_vel);
 		stage=1;
 		lifeTime=_lifeTime;
-		this.audio.clip=whistleClips[Random.Range(0,whistleClips.Length)];
-		this.audio.Play();
+		this.GetComponent.<AudioSource>().clip=whistleClips[Random.Range(0,whistleClips.Length)];
+		this.GetComponent.<AudioSource>().Play();
 	}
 	/*
 	override function Shoot(_vel:Vector3)

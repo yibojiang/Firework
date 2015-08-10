@@ -1,9 +1,9 @@
 #pragma strict
 
 var speed:float;
-var exsprite:exSprite;
+//var exsprite:exSprite;
 var text:boolean;
-var exfont:exSpriteFont;
+//var exfont:exSpriteFont;
 var tm:TextMesh;
 
 var max:float=1.0;
@@ -23,6 +23,7 @@ function FadeOut(_time:float)
 }
 
 function Update () {
+/*
 	if (!text)
 	{
 		if (exsprite!=null){
@@ -44,4 +45,5 @@ function Update () {
 		}
 		
 	}
+	*/
 }

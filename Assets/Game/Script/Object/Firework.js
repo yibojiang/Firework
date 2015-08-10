@@ -22,7 +22,7 @@ var whistleClips:AudioClip[];
 
 function Awake()
 {
-	body=this.rigidbody;
+	body=this.GetComponent.<Rigidbody>();
 	color=Color.white;
 }
 
@@ -53,8 +53,8 @@ function Shoot(_force:Vector3)
 	stage=1;
 
 	//this.audio.PlayOneShot(whistleClips[Random.Range(0,whistleClips.Length)]);
-	this.audio.clip=whistleClips[Random.Range(0,whistleClips.Length)];
-	this.audio.Play();
+	this.GetComponent.<AudioSource>().clip=whistleClips[Random.Range(0,whistleClips.Length)];
+	this.GetComponent.<AudioSource>().Play();
 
 	var snake:SnakePath=this.GetComponent(SnakePath) as SnakePath;
 	if (snake!=null){
@@ -114,7 +114,7 @@ function Explosion()
 	var explode:GameObject=Instantiate(explosion,this.transform.position,Quaternion.identity);
 	
 	
-	this.audio.PlayOneShot(explosionClips[Random.Range(0,explosionClips.Length)]);
+	this.GetComponent.<AudioSource>().PlayOneShot(explosionClips[Random.Range(0,explosionClips.Length)]);
 	//explode.audio.Play();
 	
 	var pr:ParticleRenderer=explode.GetComponent(ParticleRenderer) as ParticleRenderer;

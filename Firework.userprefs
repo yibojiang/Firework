@@ -1,15 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Menu/NewMenu/ShopPack.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../InfinityCircleProjects/InfinityCircle5 Project/Lifeboat/Assets/Scripts/Wind.js">
     <Files>
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Manager/ProfileManager.js" Line="798" Column="54" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Database/ConfigHelper.js" Line="230" Column="2" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Standard Assets/Analytics.cs" Line="129" Column="4" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Plugins/PaySDK/PaySDK.cs" Line="24" Column="10" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Plugins/PaySDK/PaySDKManager.cs" Line="36" Column="27" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Manager/ShopManager.js" Line="166" Column="25" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Menu/NewMenu/ShopPack.js" Line="447" Column="85" />
-      <File FileName="../../NaughtyKittiesProject/NaughtyKitties/Assets/Game/Scripts/Menu/NewMenu/ShopPanel.js" Line="464" Column="36" />
+      <File FileName="../../InfinityCircleProjects/InfinityCircle5 Project/Lifeboat/Assets/Scripts/Wind.js" Line="13" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

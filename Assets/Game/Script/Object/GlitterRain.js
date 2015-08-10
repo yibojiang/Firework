@@ -10,7 +10,7 @@ class GlitterRain extends Firework{
 
 	override function Awake()
 	{
-		body=this.rigidbody;
+		body=this.GetComponent.<Rigidbody>();
 	}
 
 	override function Start () {
@@ -33,7 +33,7 @@ class GlitterRain extends Firework{
 	{
 		body.AddForce(_vel);
 		stage=1;
-		this.audio.Play();
+		this.GetComponent.<AudioSource>().Play();
 	}
 
 	override function Explosion()
@@ -67,7 +67,7 @@ class GlitterRain extends Firework{
 			
 		}
 
-		this.audio.PlayOneShot(explosionClips[Random.Range(0,explosionClips.Length)]);
+		this.GetComponent.<AudioSource>().PlayOneShot(explosionClips[Random.Range(0,explosionClips.Length)]);
 		stage=2;
 		
 		body.Sleep();

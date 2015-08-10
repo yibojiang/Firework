@@ -57,7 +57,7 @@ class TextDisplay
 
 function Start () {
 	interval=levels[index].interval;
-	Screen.showCursor=false;
+	Cursor.visible=false;
 	
 }
 
