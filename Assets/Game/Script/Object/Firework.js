@@ -130,6 +130,6 @@ function Explosion()
 	body.Sleep();
 	
 	head.intensity=1;
-	head.range=1000;
+	head.range=100;
 	smoke.emit=false;
 }

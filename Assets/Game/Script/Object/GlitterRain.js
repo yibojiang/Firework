@@ -72,8 +72,8 @@ class GlitterRain extends Firework{
 		
 		body.Sleep();
 		
-		head.intensity=2;
-		head.range=1200;
+		head.intensity=1;
+		head.range=100;
 		smoke.emit=false;
 	}
 
